@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .box {
+      background: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .box:hover {
+      background: gray;
+      color: white;
+    }
+
+    .timer {
+      display: none;
+      font-size: 15vw;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="box" data-time="5">30 seconds</div>
+    <div class="box" data-time="60">1 minute</div>
+    <div class="box" data-time="120">2 minutes</div>
+    <div class="box" data-time="180">3 minutes</div>
+    <div class="box" data-time="240">4 minutes</div>
+    <div class="box" data-time="300">5 minutes</div>
+    <div class="box" data-time="360">6 minutes</div>
+    <div class="box" data-time="420">7 minutes</div>
+    <div class="box" data-time="480">8 minutes</div>
+    <div class="box" data-time="540">9 minutes</div>
+    <div class="box" data-time="600">10 minutes</div>
+  </div>
+
+  <div class="timer" id="countdown">0:00</div>
+
+  <audio id="chime" src="beep-01a.wav"></audio>
+
+  <script>
+    const grid = document.querySelector('.grid');
+    const timerElement = document.getElementById('countdown');
+    const chime = document.getElementById('chime');
+    let countdownInterval;
+    let remainingTime;
+    let isPaused = false;
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function startCountdown(seconds) {
+      remainingTime = seconds;
+      timerElement.textContent = formatTime(remainingTime);
+      timerElement.style.display = 'block';
+      grid.style.display = 'none';
+
+      countdownInterval = setInterval(() => {
+        if (!isPaused) {
+          remainingTime -= 1;
+          timerElement.textContent = formatTime(remainingTime);
+
+          if (remainingTime <= 0) {
+            clearInterval(countdownInterval);
+            chime.play();
+          }
+        }
+      }, 1000);
+    }
+
+    function stopCountdown() {
+      clearInterval(countdownInterval);
+      timerElement.style.display = 'none';
+      grid.style.display = 'grid';
+      isPaused = false;
+    }
+
+    function togglePause() {
+      isPaused = !isPaused;
+    }
+
+    document.querySelectorAll('.box').forEach(box => {
+      box.addEventListener('click', () => {
+        const time = parseInt(box.dataset.time, 10);
+        startCountdown(time);
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        stopCountdown();
+      } else if (event.key === ' ') {
+        togglePause();
+      }
+    });
+  </script>
+</body>
+</html>
