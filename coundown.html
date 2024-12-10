@@ -18,7 +18,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
       gap: 10px;
       width: 90%;
       max-width: 800px;
@@ -46,46 +46,12 @@
     .timer-container {
       display: none;
       text-align: center;
-      position: relative;
     }
 
     .timer {
-      font-size: 15vw;
+      font-size: 25vw;
       font-weight: bold;
       color: black;
-    }
-
-    .adjust-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      color: gray;
-      background: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      user-select: none;
-      transition: background 0.3s;
-    }
-
-    .adjust-button:hover {
-      background: white;
-      color: black;
-    }
-
-    .adjust-left {
-      left: -200px;
-    }
-
-    .adjust-right {
-      right: -200px;
     }
   </style>
 </head>
@@ -105,22 +71,18 @@
   </div>
 
   <div class="timer-container">
-    <button class="adjust-button adjust-left" id="subtract10">-10s</button>
     <div class="timer" id="countdown">0:00</div>
-    <button class="adjust-button adjust-right" id="add10">+10s</button>
   </div>
 
-  <audio id="chime" src="beep-01a.wav"></audio>
+  <audio id="chime" src="cell-phone-ringing-151762.mp3"></audio>
 
   <script>
     const grid = document.querySelector('.grid');
     const timerContainer = document.querySelector('.timer-container');
     const timerElement = document.getElementById('countdown');
-    const subtract10Button = document.getElementById('subtract10');
-    const add10Button = document.getElementById('add10');
     const chime = document.getElementById('chime');
     let countdownInterval;
-    let remainingTime;
+    let remainingTime = 0;
     let isPaused = false;
 
     function formatTime(seconds) {
@@ -130,6 +92,7 @@
     }
 
     function startCountdown(seconds) {
+      clearInterval(countdownInterval); // Clear any previous interval
       remainingTime = seconds;
       timerElement.textContent = formatTime(remainingTime);
       timerContainer.style.display = 'flex';
@@ -143,7 +106,7 @@
           if (remainingTime <= 0) {
             clearInterval(countdownInterval);
             chime.play();
-            remainingTime = 0;
+            remainingTime = 0; // Keeps it at 0 for further interaction
           }
         }
       }, 1000);
@@ -157,12 +120,51 @@
     }
 
     function togglePause() {
-      isPaused = !isPaused;
+      if (remainingTime > 0) {
+        isPaused = !isPaused;
+      } else if (remainingTime > 0 || remainingTime === 0) {
+        // Restart the countdown when paused and time is added
+        isPaused = false;
+        countdownInterval = setInterval(() => {
+          if (!isPaused) {
+            remainingTime -= 1;
+            timerElement.textContent = formatTime(remainingTime);
+
+            if (remainingTime <= 0) {
+              clearInterval(countdownInterval);
+              chime.play();
+              remainingTime = 0;
+            }
+          }
+        }, 1000);
+      }
     }
 
     function adjustTime(amount) {
-      remainingTime = Math.max(remainingTime + amount, 0);
-      timerElement.textContent = formatTime(remainingTime);
+      if (remainingTime > 0 || amount > 0) {
+        remainingTime = Math.max(remainingTime + amount, 0);
+        timerElement.textContent = formatTime(remainingTime);
+      }
+    }
+
+    function keyStartCountdown(key) {
+      const keyMapping = {
+        '`': 30,
+        '1': 60,
+        '2': 120,
+        '3': 180,
+        '4': 240,
+        '5': 300,
+        '6': 360,
+        '7': 420,
+        '8': 480,
+        '9': 540,
+        '0': 600,
+      };
+
+      if (key in keyMapping) {
+        startCountdown(keyMapping[key]);
+      }
     }
 
     document.querySelectorAll('.box').forEach(box => {
@@ -172,14 +174,17 @@
       });
     });
 
-    subtract10Button.addEventListener('click', () => adjustTime(-10));
-    add10Button.addEventListener('click', () => adjustTime(10));
-
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         stopCountdown();
       } else if (event.key === ' ') {
         togglePause();
+      } else if (event.key === 'ArrowUp') {
+        adjustTime(10);
+      } else if (event.key === 'ArrowDown') {
+        adjustTime(-10);
+      } else {
+        keyStartCountdown(event.key);
       }
     });
   </script>
