@@ -1,0 +1,710 @@
+<html>
+<h1><center>Chemistry Answer Keys</center></h1>
+
+
+<button onclick="navigator.clipboard.writeText('(𝑠)')">(𝑠)</button> <button onclick="navigator.clipboard.writeText('(𝓁)')">(𝓁)</button> <button onclick="navigator.clipboard.writeText('(𝑔)')">(𝑔)</button> <button onclick="navigator.clipboard.writeText('(𝑎𝑞)')">(𝑎𝑞)</button><button onclick="navigator.clipboard.writeText('(ℓ)')">(ℓ)</button>
+<br>
+<br>
+ <button onclick="navigator.clipboard.writeText('₀')">₀</button> <button onclick="navigator.clipboard.writeText('ₓ')">ₓ</button> <button onclick="navigator.clipboard.writeText('ᵧ')">ᵧ</button> <button onclick="navigator.clipboard.writeText('𝑠')">𝑠</button> <button onclick="navigator.clipboard.writeText('𝑥')">𝑥</button> <button onclick="navigator.clipboard.writeText('𝑦')">𝑦</button> <button onclick="navigator.clipboard.writeText('𝑣')">𝑣</button>  <button onclick="navigator.clipboard.writeText('𝑎')">𝑎</button> <button onclick="navigator.clipboard.writeText('𝑡')">𝑡</button>
+
+<button onclick="navigator.clipboard.writeText('Please complete the printout distributed in class.')">Printout Instructions</button>
+
+<button onclick="navigator.clipboard.writeText('Please answer the questions in the attached google form.')">Google Form Instructions</button>
+
+<button onclick="navigator.clipboard.writeText('Refer to the attached student checklist to keep track of completed work and the attached vocabulary sheet for word definitions for this unit.')">Vocab and Checklist</button>
+
+
+<button onclick="navigator.clipboard.writeText('Please click on the attached link and follow the instructions for correcting tests. The answer key to the test will be attached here after the test is administered (if I forget to post the key, please send me a reminder in a private comment.).')">Test Corrections Text</button>
+
+<button onclick="navigator.clipboard.writeText('Please complete the document that was distributed in class. The due date for this assignment is the same as the date of the test. Check your work with the attached answer key and ask me if you have further questions.')">Test Review Instructions</button>
+
+<button onclick="navigator.clipboard.writeText('Test scores will be recorded here. Last date to make up this test is . You will need to have all related graded assignments and the test corrections completed in order to be allowed to make up this test.')">Test Instructions</button>
+
+<button onclick="navigator.clipboard.writeText('Click on the attached link to get to the lab assignment. The assignment is linked from here so you can see all unit assignment in the same place.')">Lab Link Instructions for Unit</button>
+
+<button onclick="navigator.clipboard.writeText('Absent on due date. Please turn in ASAP upon return.')">Absent on Due Date</button>
+
+<button onclick="navigator.clipboard.writeText('Absent on date administered. Please make up after school ASAP upon return.')">Absent for quiz/test</button>
+
+
+
+<br>
+<br>
+ <button onclick="generateLink()">Presentation Publication Link</button>
+ <script>
+    function generateLink() {
+      // Prompt the user for input
+      var userInput = prompt("Enter text:");
+
+      if (userInput !== null) { // Check if the user pressed "Cancel"
+        // Create the link with the user input
+        var generatedLink = "https://docs.google.com/presentation/d/" + userInput + "/pub";
+
+        // Copy the link to the clipboard
+        var tempInput = document.createElement("input");
+        tempInput.value = generatedLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        // Inform the user that the link has been copied
+        alert("Link copied to clipboard: " + generatedLink);
+      }
+    }
+  </script>
+
+<br>
+<br>
+<button onclick="generateQRCode()">Generate QR Code</button>
+<script>
+function generateQRCode() {
+      // Prompt the user for input
+      var userInput = prompt("Enter website for QR Code:");
+
+      if (userInput !== null) { // Check if the user pressed "Cancel"
+        // Create the link with the user input
+        var generatedLink = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + userInput;
+
+        // Copy the link to the clipboard
+        var tempInput = document.createElement("input");
+        tempInput.value = generatedLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        // Inform the user that the link has been copied
+        alert("Link copied to clipboard: " + generatedLink);
+      }
+    }
+</script>
+
+<br>
+<br>
+
+<a href="https://www.classtools.net/random-group-generator/">Random Group Generator</a>
+
+<button id="copyButton">Period 2</button>
+
+<script>
+const copyButton = document.getElementById('copyButton');
+const listItems = ['Isabella', 'Max B.', 'Ava', 'Connor', 'Natalie', 'Evan'];
+
+copyButton.addEventListener('click', () => {
+  const listText = listItems.join('\n'); // Join list items with newlines
+
+  navigator.clipboard.writeText(listText)
+    .then(() => {
+      console.log('List copied to clipboard!');
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+});
+</script>
+
+
+
+
+<h2><u>Contents</u></h2>
+
+<br>
+
+<a href="#topic 1">Unit 1 - Measurements and Uncertainty</a>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('__________________________________________________________________________________')">full length line</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('______________________')">short line</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('Base your answers to the following # of questions on the information below and on your knowledge of chemistry.')">Long Narrative Intro</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('Base your answers to the following # of questions on the information and diagram below.')">Medium Narrative Intro</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('Base your answers to the following # of questions on the information below.')">Short Narrative Intro</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 - ')">𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃</button>
+
+<br>
+<br>
+
+
+<button onclick="navigator.clipboard.writeText('https://lh3.googleusercontent.com/m4-DI9sudpUhWpP_Kg937ZLRyJ6yDnF_dG54Yttg0sb1jS2vts6YDuHts39lgtBVQ7aOAXeMslhwMJF3hVjB6CRa4qUvpBAicaJHoYXb-S79u_qEt0iV8G4mqZFo7638eE0Mc1WUuA=w2400')">Test Corrections Instructions (picture)</button>
+
+<button class="btn btn-success" onclick=" window.open('https://drive.google.com/file/d/1rlKS_vSngUYKzlnMq4Xp0IfWwk5sA_NI/view?usp=share_link','_blank')"> Test Corrections Instructions (pdf)</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<h2>Topic 16 - Oxidation and Reduction</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1yylIcLdIF-WZ4VqJeRRdOI6eDyAhGK9C/view?usp=share_link')">AK - Half-Reactions - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<h2>Topic 15 - Acids, Bases, and Salts</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/13TzkBHrSQhyRdkzwdWHpxfIpD_cbkJd0/view?usp=share_link')">AK - Reactions Involving Acids and Bases - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1mQpXDFMnC8RdwEGB0hCtLzm42bsH0LZy/view?usp=share_link')">AK - Acid-Base Titrations - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<h2>Topic 14 - Kinematics and Equilibrium</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1i4vZsbxGXzYGnrU_Jd01vRU-ypV2f-e4/view?usp=share_link')">AK - Collision Theory and Factors That Affect Rate of Reaction - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1PC60Yr1DjU0AIpJ4xrXuBMMxn9uJaYlq/view?usp=share_link')">AK - Le Chatelier's Principle - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<h2>Topic 13 - Thermodynamics</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1FY3-GIekv_U2j9OSE7QgvuzxzPIrqWIx/view?usp=share_link')">AK - Heat Transferred During a Phase Change - Practice (printout)</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1HPJZwF--jEzeawwEVf2Ek-kB8OgHUppM/view?usp=share_link')">AK - Application of Heat Transfer Equations - Practice </button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1yc5Z3TdhdNWMnGyguL4f-pgluRO-mVLR/view?usp=share_link')">AK -  Heat Transfer and Potential Energy Diagrams - Practice (printout)</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+
+<h2>Topic 12 - Organic Chemistry</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1C7kOsCcj_pMwo-TRNxew-lLjyqDPF0SQ/view?usp=share_link')">AK - Hydrocarbon Structures and Names - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1DjzyuvxVO_vFsdMCG6JIA3SQsx57UPwZ/view?usp=share_link')">06 AK - Chemistry Reference Tables Workbook - Table Q - Practice (printout) - Copy</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1sZMwqy2E4kwoElDTffk7k0qFn1DNJ8VQ/view?usp=share_link')">08 AK - Functional Groups - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1RTABR0GVgjJxU7Th1-AND7CCpjRNyQ3X/view?usp=share_link')">10 AK - Organic Reactions - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+
+<h2>Topic 11 - Properties of Solutions</h2>
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/16vN7LdJwLLpJMVuGpiG2ySfx9-Ult8RV/view?usp=share_link')">AK - How to Read Solubility Curves (Reference Table G) - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1rPa8oIPmCZYdYvcXLCw26P31mMlKw2-I/view?usp=share_link')">AK - Solution concentration - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1WQ0wcA_I4pNoV098c8a7vIzwxe7mMj0j/view?usp=share_link')">AK - Solubility Guidelines for Aqueous Solutions - Table F - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<h2>Topic 10 - The Behavior of Gases</h2>
+
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1V2E0V4pV-Si2kWUsn6pJJ3KqAgKgLyPd/view?usp=share_link')">AK - The Combined Gas Laws - Practice</button>
+
+<br>
+<br>
+
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<h2>Topic 9 - Phases of Matter and Energy Flow</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/12M0de-A-trWyczCcanrp5poKcLiMshZE/view?usp=share_link')">AK - Phases of Matter Graphic Organizer</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1aQAkN2DJckVee5JIWNsIz_FX0lk32j8X/view?usp=sharing')">AK - Introduction to Heating and Cooling Curves</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1FRXleEOjcFhy4wp2I5a4faBwU1X-smur/view?usp=share_link')">AK - Converting Pressure and Temperature Units - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1mPbLs6REyK2wl640uOj8minssK8gkQGA/view?usp=share_link')">AK - Vapor Pressure - How do Liquids Boil? - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+
+
+<h2>Topic 8 - Chemical Reactions and Equations</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1A4CTFOp3Gp3hjjH-yiCBKmMna7SzIDsz/view?usp=share_link')">AK - Introduction to Chemical Reactions and Equations - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1_EDgODrWy3c_NZtHWBTlcMbOVxT6QJQE/view?usp=share_link')">AK - Balancing Equations Activity - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1ZT7ctPj_zmWK0tyBB1riKn_7JLPxIOV6/view?usp=share_link')">AK - Is It Balanced - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1AFr3UQli4Cjvj1LzIoR2pX_ILssvCNjI/view?usp=share_link')">AK - Balancing Chemical Equations - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1p29vniYubBztB8cWpYvxryIdbBTv9ABS/view?usp=sharing')">AK - Mole Ratios - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1dcoqa3hlJTj1Q_4ftpy94XH-KbI1K-gP/view?usp=share_link')">AK - Types of Chemical Reactions - Practice (printout)</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1pDW0Kwn-YyRcooDvaFeIn_maXNEs7owv/view?usp=share_link')">AK - Reference Table J and Spontaneous Reactions - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+
+<h2>Topic 7 - Naming Compounds and The Mole</h2>
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1NB9VJ_cygCaKyVz7P7DPySzE98-Jb0cT/view?usp=share_link')">Ionic Compound Formation Chart</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1JOOcvWqg6P8VVJgOlNHkCBQ2qrgRPdPc/view?usp=sharing')">AK - Covalent Compound Formulas and Names - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1ug87rF-4S7vnydGENXvqQuoWHd3ksGiP/view?usp=share_link')">AK - Hydrates and Empirical Formulas - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Cx1-cOXATz11sLZr2sT7HYbswfjniNee/view?usp=share_link')">AK - Classwork - Theoretical Percent Composition by Mass (gram-formula mass) - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Vwol4WOKu108hGdv1tOZCO17BE9nTQxy/view?usp=share_link')">AK - Mole Calculations - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1jQuzysUIsmnhjLjCie_Jr3vz705layfp/view?usp=share_link')">AK - Molecular Formula and Empirical Formula Relationship - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+
+<h2>Topic 6 - Chemical Bonding</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Fy6iPBKONuVC0hT05kW-pMFET3UCkpHb/view?usp=share_link')">AK - Formation of Ionic Bonds in Ionic Compounds - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1U_4VTCiW1-M9qwhRAlCdzuQbi75ow9Z2/view?usp=share_link')">AK - Formation of Covalent Bonds in Covalent (Molecular) Compounds</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1VFF1BZmG8LvefVzB1zt8-67Rzav9ykEp/view?usp=share_link')">AK - Review of Ionic and Covalent Bonding - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1zRu7pZ_UnlwTyUv-ni9gfBPpsmbjES3t/view?usp=share_link')">AK - Bond Characteristics - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/15tHc6nvtZR-gQQz4MLeftjMmwmsUCwPx/view?usp=share_link')">AK - Polarity of Covalent Bonds - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1eei4eOu5npuW4Lyeogqn3qkmoJj2CY6o/view?usp=share_link')">AK - Polyatomic Ions and the Compounds That Contain Them - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+
+
+
+
+<h2><a id="topic 1">Topic 1 - Measurements and Uncertainty</a></h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1v4CUV5csAjR9TazrM46O0htqHdKF0isU/view?usp=sharing')">AK Scientific Notation - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1VmaIUSuiLGREbEmwaVdQ4skLBMHBNeqO/view?usp=drive_link')">AK Unit Conversions - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1nYnoakZJTX0r-pKHFjvoOBhR0SKG7nAw/view?usp=sharing')">AK Converting Units with Prefixes - Practice</button>
+
+<br>
+<br>
+
+
+<button onclick="navigator.clipboard.writeText('')">AK Accuracy, Precision, and Percent Error - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/17_ai7PaikZZjF1EmY4wcxOv8svr8Qezo/view?usp=sharing')">AK Identifying Significant Figures - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/10xOwGJYS7I_3oH9J9OjpuTNVniXH9ROb/view?usp=sharing')">AK - Introduction to Matter and Change - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Vk6yE0vLYBQ-hyeUCVah6bVB_SWkGOw6/view?usp=sharing')">AK - Physical Changes - Changes in States of Matter - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1czrgRqeA7yuvbrMt-pBWsA_BmSSQY9WR/view?usp=sharing')">AK - Classification of Matter - Practice</button>
+
+<br>
+<br>
+
+<h2>Topic 2 - Matter and Change</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1tmx7cbWaSb36LgIAdHVkL9pRtzIBKLqt/view?usp=sharing')">AK Introduction to Matter and Change - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')"></button>
+
+<h2>Topic 3 - Atomic Concepts</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1YFIJ-oiy5Ods5hzsmLXcKRpvqmpZAu-F/view?usp=sharing')">07 AK - Isotopes - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Eb8bteb4JanGRcTM8PHAjkj3fzIg65Fs/view?usp=sharing')">AK - Isotope and Ion Notation - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1Qg-msp3cMtB9eOH1Aode74oUtzlTHLDq/view?usp=sharing')">AK - Lewis Electron-Dot Diagrams of Ions - Practice</button>
+
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1pmno2Pjdhr4g07ULwvClW3c7zwcFW5wF/view?usp=sharing')">AK - Atomic Mass of an Element - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1TQ-Yppom_liL8IrNfDPeVRFjF2X9N_AO/view?usp=sharing')">AK - Production of Atomic Spectra - Practice</button>
+
+<br>
+<br>
+
+<h2>Topic 4 - Nuclear Chemistry</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1IP7VQbNvKCNgj4iuk1LxE44I-PlnapZX/view?usp=sharing')">AK - Radioactivity and Natural Transmutations - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1y-OyeWzhQ7yM8hm0zFjB6Ecq380szE5t/view?usp=sharing')">AK - Artificial Transmutations, Fission and Fusion - Practice</button>
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1GmbwnGYXHv07DVrHr5y5Ltr1u_JnfdaW/view?usp=sharing')">AK - Uses and Dangers of Radioisotopes - Practice</button>
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1aEzqMMOVHr7p8F6U3JnFVZXVwh2f12W_/view?usp=sharing')">AK - Gizmos - Half-Life - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/17wyv-Icm2n7Wqz2ZUOVApXjjAb1zZeIf/view?usp=sharing')">AK - Half-Life - Practice</button>
+
+<br>
+<br>
+
+<h2>Topic 5 - The Periodic Table</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1chXc2XvmRZ5GxDSvm7srFtwM_2gP4-l4/view?usp=share_link')">AK - Patterns of the Periodic Table - Practice</button>
+
+<br>
+<br>
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1uV7UvR5IITKs80aQGmHf7TTqLFttJD5L/view?usp=share_link')">02 AK - Periodic Trends - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1><center>Physics Answer Keys</center></h1>
+<h2>Topic 8 - Momentum</h2>
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1SkfvsKIBPcUIYXkFRmqdWoh3edZjQEyQ/view?usp=share_link')">AK - Impulse Questions - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+
+<h2>Topic 2 - Kinematics</h2>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1I57zBFpY704Gktx642VIEh5vZFQzSkMJ/view?usp=sharing')">AK Position, Distance, and Displacement - Practice</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1kGb3yblcVkz_STOeZkv0If5jMChouryo/view?usp=sharing')">AK - Gimos - Displacement-Time Graphs</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1t5G3eBG0ZDGpyQoykjJ_IIBAQtu7rLR1/view?usp=sharing')">AK - Introduction to Acceleration - Practice</button>
+
+<br>
+<br>
+
+<h2>Topic 3 - Statics</h2>
+
+
+<button onclick="navigator.clipboard.writeText('https://drive.google.com/file/d/1QQiVUjNDkzJa9mdjMhBLA-UtkHIoe79k/view?usp=sharing')">AK - Graphical Methods of Vector Addition - Practice</button>
+
+<br>
+<br>
+
+<button onclick="navigator.clipboard.writeText('')">BLANK</button>
+
+</html>
