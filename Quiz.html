@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .start-screen, .quiz-screen {
+            display: none;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .start-button {
+            background-color: #ddd;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .start-button:hover {
+            background-color: #ccc;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .choice {
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .choice.correct {
+            background-color: green;
+        }
+
+        .choice.incorrect {
+            background-color: red;
+        }
+
+        .feedback {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .next-button {
+            display: none;
+            background-color: #ddd;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 10;
+        let answers = [];
+
+        async function loadAnswers() {
+            try {
+                const response = await fetch('answers.json');
+                answers = await response.json();
+                console.log('Answers loaded:', answers);
+            } catch (error) {
+                console.error('Error loading answers.json:', error);
+            }
+        }
+
+        function startQuiz() {
+            document.querySelector('.start-screen').classList.remove('active');
+            document.querySelector('.quiz-screen').classList.add('active');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const questionImage = document.querySelector('.question img');
+            questionImage.src = `images/Q${currentQuestion}.jpg`;
+
+            const feedbackDiv = document.querySelector('.feedback');
+            feedbackDiv.textContent = '';
+
+            const nextButton = document.querySelector('.next-button');
+            nextButton.style.display = 'none';
+
+            const choices = document.querySelectorAll('.choice');
+            choices.forEach((choice, index) => {
+                choice.classList.remove('correct', 'incorrect');
+                choice.style.backgroundColor = 'gray'; // Reset background to gray
+                choice.onclick = () => handleAnswer(index + 1, choice);
+            });
+        }
+
+        function handleAnswer(selected, choiceElement) {
+            const correctAnswer = answers[currentQuestion - 1];
+
+            // Reset all choices to gray before marking the selected one
+            const choices = document.querySelectorAll('.choice');
+            choices.forEach(choice => {
+                choice.classList.remove('correct', 'incorrect');
+                choice.style.backgroundColor = 'gray';
+            });
+
+            if (selected === correctAnswer) {
+                choiceElement.classList.add('correct');
+                choiceElement.style.backgroundColor = 'green';
+                document.querySelector('.feedback').textContent = 'Correct!';
+                document.querySelector('.next-button').style.display = 'block';
+            } else {
+                choiceElement.classList.add('incorrect');
+                choiceElement.style.backgroundColor = 'red';
+                document.querySelector('.feedback').textContent = `Hint: Option ${selected} is not correct. Try again!`;
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion > totalQuestions) {
+                alert('Quiz completed!');
+                return;
+            }
+            loadQuestion();
+        }
+
+        window.onload = loadAnswers;
+    </script>
+</head>
+<body>
+    <div class="start-screen active">
+        <h1>Welcome to the Picture Quiz!</h1>
+        <button class="start-button" onclick="startQuiz()">START</button>
+    </div>
+
+    <div class="quiz-screen">
+        <div class="question">
+            <img src="" alt="Question Image">
+        </div>
+
+        <div class="choices">
+            <button class="choice">1</button>
+            <button class="choice">2</button>
+            <button class="choice">3</button>
+            <button class="choice">4</button>
+        </div>
+
+        <div class="feedback"></div>
+
+        <button class="next-button" onclick="nextQuestion()">Next</button>
+    </div>
+</body>
+</html>
