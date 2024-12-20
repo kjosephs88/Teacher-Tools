@@ -99,14 +99,22 @@
         let currentQuestion = 1;
         const totalQuestions = 10;
         let answers = [];
+        let feedback = {};
 
-        async function loadAnswers() {
+        async function loadFiles() {
             try {
-                const response = await fetch('answers.json');
-                answers = await response.json();
+                // Load answers
+                const answersResponse = await fetch('answers.json');
+                answers = await answersResponse.json();
+
+                // Load feedback
+                const feedbackResponse = await fetch('feedback.json');
+                feedback = await feedbackResponse.json();
+
                 console.log('Answers loaded:', answers);
+                console.log('Feedback loaded:', feedback);
             } catch (error) {
-                console.error('Error loading answers.json:', error);
+                console.error('Error loading JSON files:', error);
             }
         }
 
@@ -121,7 +129,7 @@
             questionImage.src = `images/Q${currentQuestion}.jpg`;
 
             const feedbackDiv = document.querySelector('.feedback');
-            feedbackDiv.textContent = '';
+            feedbackDiv.innerHTML = ''; // Clear feedback
 
             const nextButton = document.querySelector('.next-button');
             nextButton.style.display = 'none';
@@ -136,6 +144,7 @@
 
         function handleAnswer(selected, choiceElement) {
             const correctAnswer = answers[currentQuestion - 1];
+            const questionFeedback = feedback[currentQuestion]; // Get feedback for the current question
 
             // Reset all choices to gray before marking the selected one
             const choices = document.querySelectorAll('.choice');
@@ -144,15 +153,17 @@
                 choice.style.backgroundColor = 'gray';
             });
 
+            const feedbackDiv = document.querySelector('.feedback');
+
             if (selected === correctAnswer) {
                 choiceElement.classList.add('correct');
                 choiceElement.style.backgroundColor = 'green';
-                document.querySelector('.feedback').textContent = 'Correct!';
+                feedbackDiv.innerHTML = questionFeedback[selected]; // Display custom correct feedback
                 document.querySelector('.next-button').style.display = 'block';
             } else {
                 choiceElement.classList.add('incorrect');
                 choiceElement.style.backgroundColor = 'red';
-                document.querySelector('.feedback').textContent = `Hint: Option ${selected} is not correct. Try again!`;
+                feedbackDiv.innerHTML = questionFeedback[selected]; // Display custom incorrect feedback
             }
         }
 
@@ -165,7 +176,7 @@
             loadQuestion();
         }
 
-        window.onload = loadAnswers;
+        window.onload = loadFiles;
     </script>
 </head>
 <body>
