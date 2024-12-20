@@ -1,6 +1,8 @@
 {
     "1": {
-        "1": "<p><img src="https://images.squarespace-cdn.com/content/v1/5b7868d696d4557d31bc4e28/1621900672996-XZCO272Z9L2PLHJKB03Y/Yosemite+Waterfall.jpg"></p>",
+        "1": {
+            "image": "https://images.squarespace-cdn.com/content/v1/5b7868d696d4557d31bc4e28/1621900672996-XZCO272Z9L2PLHJKB03Y/Yosemite+Waterfall.jpg"
+        },
         "2": "<p>Correct! Great job on Question 1.</p>",
         "3": "<p>Option 3 for Question 1 is not quite right. Try another.</p>",
         "4": "<p>Option 4 for Question 1 might seem right, but it’s not. Keep going!</p>"
