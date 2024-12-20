@@ -4,60 +4,59 @@
         "2": "<p>Correct! Great job on Question 1.</p>",
         "3": "<p>Option 3 for Question 1 is not quite right. Try another.</p>",
         "4": "<p>Option 4 for Question 1 might seem right, but it’s not. Keep going!</p>"
-    }
+    },
     "2": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "3": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "4": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "5": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "6": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "7": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "8": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "9": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
-    }
+    },
     "10": {
         "1": "<p>Option 1 for Question 2 is incorrect. Review your notes on this topic.</p>",
         "2": "<p>Option 3 for Question 2 is close, but it’s not correct.</p>",
         "3": "<p>Correct! Well done on Question 2.</p>",
         "4": "<p>Option 4 for Question 2 is not the best choice. Try again.</p>"
     }
-    // Continue for all questions
 }
