@@ -26,7 +26,57 @@
 
 <button onclick="navigator.clipboard.writeText('Absent on date administered. Please make up after school ASAP upon return.')">Absent for quiz/test</button>
 
+<button onclick="generateLinkStudent()">Student Tools</button>
+<br>
+<br>
+<button onclick="generateLinkTeacher()">Teacher Tools</button>
 
+<br>
+<br>
+ <script>
+    function generateLinkStudent() {
+      // Prompt the user for input
+      var userInput = prompt("Enter text:");
+
+      if (userInput !== null) { // Check if the user pressed "Cancel"
+        // Create the link with the user input
+        var generatedLink = "https://kjosephs88.github.io/Student-Tools/" + userInput;
+
+        // Copy the link to the clipboard
+        var tempInput = document.createElement("input");
+        tempInput.value = generatedLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        // Inform the user that the link has been copied
+        alert("Link copied to clipboard: " + generatedLink);
+      }
+    }
+
+    function generateLinkTeacher() {
+      // Prompt the user for input
+      var userInput = prompt("Enter text:");
+
+      if (userInput !== null) { // Check if the user pressed "Cancel"
+        // Create the link with the user input
+        var generatedLink = "https://kjosephs88.github.io/Teacher-Tools/" + userInput;
+
+        // Copy the link to the clipboard
+        var tempInput = document.createElement("input");
+        tempInput.value = generatedLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        // Inform the user that the link has been copied
+        alert("Link copied to clipboard: " + generatedLink);
+      }
+    }
+
+  </script>
 
 <br>
 <br>
