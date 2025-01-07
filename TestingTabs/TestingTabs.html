@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestingTabs</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            background-color: #333;
+        }
+        .tab {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #444;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+        .tab:hover {
+            background-color: #555;
+        }
+        .tab.active {
+            background-color: #777;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .unit-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            border: 3px solid #7e6e6e;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #7e6e6e;
+            color: white;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+        }
+        .link-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            background-color: #f9f9f9;
+            color: black;
+        }
+        .link-grid a:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs" id="tabs">
+        <div class="tab" data-unit="1">Unit 1</div>
+        <div class="tab" data-unit="2">Unit 2</div>
+        <div class="tab" data-unit="3">Unit 3</div>
+        <div class="tab" data-unit="4">Unit 4</div>
+        <div class="tab" data-unit="5">Unit 5</div>
+    </div>
+    <div class="content">
+        <div class="unit-title" id="unit-title">Select a Unit</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Period 2</th>
+                    <th>Period 4</th>
+                    <th>Period 9</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="period-2"></td>
+                    <td id="period-4"></td>
+                    <td id="period-9"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Dynamically load JSON and populate the table
+        function loadUnitData(unitNumber) {
+            const jsonFileName = `unit_${unitNumber}.json`;
+
+            fetch(jsonFileName)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    populateUnitData(data);
+                })
+                .catch(error => {
+                    console.error('Error loading JSON file:', error);
+                    clearTable();
+                });
+        }
+
+        // Populate the table with JSON data
+        function populateUnitData(data) {
+            document.getElementById('unit-title').textContent = data.title;
+
+            const periods = ['2', '4', '9'];
+            periods.forEach(period => {
+                const periodData = data.classPeriods[`Period ${period}`];
+                const container = document.getElementById(`period-${period}`);
+                container.innerHTML = '';
+
+                if (periodData && periodData.length > 0) {
+                    const grid = document.createElement('div');
+                    grid.className = 'link-grid';
+
+                    periodData.forEach(links => {
+                        const linkElement = document.createElement('a');
+                        linkElement.textContent = links.length > 1 ? 'Multiple Links' : 'Assignment';
+                        linkElement.href = 'javascript:void(0);';
+                        linkElement.onclick = () => openMultipleLinks(links);
+                        grid.appendChild(linkElement);
+                    });
+
+                    container.appendChild(grid);
+                } else {
+                    container.textContent = 'No Assignments';
+                }
+            });
+        }
+
+        // Open multiple links
+        function openMultipleLinks(urls) {
+            urls.forEach((url, index) => {
+                setTimeout(() => {
+                    window.open(url, '_blank');
+                }, index * 500); // 500ms delay between each link
+            });
+        }
+
+        // Clear table contents
+        function clearTable() {
+            const periods = ['2', '4', '9'];
+            periods.forEach(period => {
+                const container = document.getElementById(`period-${period}`);
+                container.innerHTML = 'No Data Available';
+            });
+        }
+
+        // Tab click event listeners
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                loadUnitData(this.dataset.unit);
+            });
+        });
+    </script>
+</body>
+</html>

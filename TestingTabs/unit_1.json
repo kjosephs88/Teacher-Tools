@@ -1,0 +1,8 @@
+{
+  "title": "Unit 1 Title",
+  "classPeriods": {
+    "Period 2": [["https://example.com/1"], ["https://example.com/2", "https://example.com/3"]],
+    "Period 4": [["https://example.com/4"]],
+    "Period 9": [["https://example.com/5", "https://example.com/6"]]
+  }
+}
