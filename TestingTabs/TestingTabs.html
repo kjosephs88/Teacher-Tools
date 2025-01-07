@@ -3,180 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestingTabs</title>
+    <title>Unit Tabs</title>
     <style>
         body {
             display: flex;
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
         .tabs {
             display: flex;
             flex-direction: column;
             width: 100px;
             background-color: #333;
         }
+
         .tab {
             padding: 10px;
-            font-size: 16px;
+            font-size: 20px;
             color: white;
             text-align: center;
             cursor: pointer;
             border: 1px solid #444;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
         }
+
         .tab:hover {
             background-color: #555;
         }
+
         .tab.active {
             background-color: #777;
         }
+
         .content {
-            flex-grow: 1;
-            padding: 20px;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 800px;
         }
+
+        .unit {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .unit.active {
+            display: block;
+        }
+
         .unit-title {
-            font-size: 24px;
+            font-size: 40px;
             margin-bottom: 20px;
+            margin-top: 30px;
+            font-weight: bold;
+            text-align: center;
         }
-        table {
+
+        .unit-table {
             width: 800px;
             border-collapse: collapse;
-            margin: auto;
+            margin: 0 auto;
         }
-        th, td {
-            border: 3px solid #7e6e6e;
+
+        .unit-table th, .unit-table td {
+            border: 3px solid black;
             text-align: center;
-            padding: 10px;
         }
-        th {
+
+        .unit-table th {
             background-color: #7e6e6e;
             color: white;
         }
-        .link-grid {
+
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 5px;
+            padding: 5px;
         }
-        .link-grid a {
+
+        .grid-container a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .grid-item {
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid #ccc;
             padding: 10px;
-            border: 1px solid #ddd;
-            text-decoration: none;
-            background-color: #f9f9f9;
-            color: black;
+            background-color: #f0f0f0;
+            cursor: pointer;
         }
-        .link-grid a:hover {
-            background-color: #e0e0e0;
+
+        .grid-item:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="tabs" id="tabs">
-        <div class="tab" data-unit="1">Unit 1</div>
-        <div class="tab" data-unit="2">Unit 2</div>
-        <div class="tab" data-unit="3">Unit 3</div>
-        <div class="tab" data-unit="4">Unit 4</div>
-        <div class="tab" data-unit="5">Unit 5</div>
+    <div class="tabs">
+        <div class="tab active" onclick="showUnit(0)">Unit 1</div>
+        <div class="tab" onclick="showUnit(1)">Unit 2</div>
+        <div class="tab" onclick="showUnit(2)">Unit 3</div>
+        <div class="tab" onclick="showUnit(3)">Unit 4</div>
+        <div class="tab" onclick="showUnit(4)">Unit 5</div>
+        <div class="tab" onclick="showUnit(5)">Unit 6</div>
+        <div class="tab" onclick="showUnit(6)">Unit 7</div>
+        <div class="tab" onclick="showUnit(7)">Unit 8</div>
+        <div class="tab" onclick="showUnit(8)">Unit 9</div>
+        <div class="tab" onclick="showUnit(9)">Unit 10</div>
+        <div class="tab" onclick="showUnit(10)">Unit 11</div>
+        <div class="tab" onclick="showUnit(11)">Unit 12</div>
+        <div class="tab" onclick="showUnit(12)">Unit 13</div>
+        <div class="tab" onclick="showUnit(13)">Unit 14</div>
+        <div class="tab" onclick="showUnit(14)">Unit 15</div>
+        <div class="tab" onclick="showUnit(15)">Unit 16</div>
     </div>
+
     <div class="content">
-        <div class="unit-title" id="unit-title">Select a Unit</div>
-        <table>
-            <thead>
+        <div id="unit-0" class="unit active">
+            <div class="unit-title">Unit 1 - Measurements and Uncertainty</div>
+            <table class="unit-table">
                 <tr>
                     <th>Period 2</th>
                     <th>Period 4</th>
                     <th>Period 9</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td id="period-2"></td>
-                    <td id="period-4"></td>
-                    <td id="period-9"></td>
+                    <td>
+                        <div class="grid-container" id="period2"></div>
+                    </td>
+                    <td>
+                        <div class="grid-container" id="period4"></div>
+                    </td>
+                    <td>
+                        <div class="grid-container" id="period9"></div>
+                    </td>
                 </tr>
-            </tbody>
-        </table>
+            </table>
+        </div>
+
+        <div id="unit-1" class="unit">
+            <div class="unit-title">Unit 2 - Matter and Change</div>
+            <table class="unit-table">
+                <tr>
+                    <th>Period 2</th>
+                    <th>Period 4</th>
+                    <th>Period 9</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="grid-container" id="period2-1"></div>
+                    </td>
+                    <td>
+                        <div class="grid-container" id="period4-1"></div>
+                    </td>
+                    <td>
+                        <div class="grid-container" id="period9-1"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
     <script>
-        // Dynamically load JSON and populate the table
-        function loadUnitData(unitNumber) {
-            const jsonFileName = `unit_${unitNumber}.json`;
-
-            fetch(jsonFileName)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    populateUnitData(data);
-                })
-                .catch(error => {
-                    console.error('Error loading JSON file:', error);
-                    clearTable();
-                });
-        }
-
-        // Populate the table with JSON data
-        function populateUnitData(data) {
-            document.getElementById('unit-title').textContent = data.title;
-
-            const periods = ['2', '4', '9'];
-            periods.forEach(period => {
-                const periodData = data.classPeriods[`Period ${period}`];
-                const container = document.getElementById(`period-${period}`);
-                container.innerHTML = '';
-
-                if (periodData && periodData.length > 0) {
-                    const grid = document.createElement('div');
-                    grid.className = 'link-grid';
-
-                    periodData.forEach(links => {
-                        const linkElement = document.createElement('a');
-                        linkElement.textContent = links.length > 1 ? 'Multiple Links' : 'Assignment';
-                        linkElement.href = 'javascript:void(0);';
-                        linkElement.onclick = () => openMultipleLinks(links);
-                        grid.appendChild(linkElement);
-                    });
-
-                    container.appendChild(grid);
-                } else {
-                    container.textContent = 'No Assignments';
-                }
-            });
-        }
-
-        // Open multiple links
+        // Function to open multiple URLs in new tabs
         function openMultipleLinks(urls) {
-            urls.forEach((url, index) => {
-                setTimeout(() => {
-                    window.open(url, '_blank');
-                }, index * 500); // 500ms delay between each link
+            urls.forEach(url => {
+                window.open(url, '_blank');
             });
         }
 
-        // Clear table contents
-        function clearTable() {
-            const periods = ['2', '4', '9'];
-            periods.forEach(period => {
-                const container = document.getElementById(`period-${period}`);
-                container.innerHTML = 'No Data Available';
-            });
+        // Function to fetch and display the links for a unit
+        function loadUnitLinks(unitId) {
+            // Fetch the JSON data for Unit 1
+            fetch(`unit${unitId + 1}_links.json`)
+                .then(response => response.json())
+                .then(data => {
+                    const unit = data[`unit${unitId + 1}`];
+                    const periods = ["period2", "period4", "period9"];
+                    
+                    periods.forEach(period => {
+                        const container = document.getElementById(period);
+                        container.innerHTML = "";
+                        unit[period].forEach(link => {
+                            const a = document.createElement("a");
+                            const div = document.createElement("div");
+                            div.classList.add("grid-item");
+                            div.textContent = link.text;
+
+                            // If there are multiple URLs, add an event listener to open them
+                            if (link.urls.length > 1) {
+                                a.href = "javascript:void(0);"; // prevent default link action
+                                a.onclick = () => openMultipleLinks(link.urls);
+                            } else {
+                                a.href = link.urls[0];
+                                a.target = "_blank";
+                            }
+                            
+                            a.appendChild(div);
+                            container.appendChild(a);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error loading unit links:', error));
         }
 
-        // Tab click event listeners
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function () {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                loadUnitData(this.dataset.unit);
-            });
+        // Show the active unit and load its links
+        function showUnit(unitId) {
+            const units = document.querySelectorAll(".unit");
+            const tabs = document.querySelectorAll(".tab");
+
+            units.forEach(unit => unit.classList.remove("active"));
+            tabs.forEach(tab => tab.classList.remove("active"));
+
+            document.getElementById(`unit-${unitId}`).classList.add("active");
+            tabs[unitId].classList.add("active");
+
+            loadUnitLinks(unitId);
+        }
+
+        // Initialize the first unit on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            loadUnitLinks(0); // Load links for Unit 1
         });
     </script>
 </body>
