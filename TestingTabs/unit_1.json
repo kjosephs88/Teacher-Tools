@@ -1,59 +1,15 @@
 {
-    "title": "Unit 6 - Chemical Bonding",
-    "classPeriods": {
-      "Period 2": [
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMTk2OTIy/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Bygt7vryKnpQ8beNA"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyNTc1MzI3/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Jt3FGM5b4tvyhcyt9"
-        ]
-      ],
-      "Period 4": [
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMTk2OTIy/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Bygt7vryKnpQ8beNA"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyNTc1MzI3/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Jt3FGM5b4tvyhcyt9"
-        ]
-      ],
-      "Period 9": [
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMTk2OTIy/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgzMDY1ODI5/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Bygt7vryKnpQ8beNA"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyNTc1MzI3/details"
-        ],
-        [
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/details",
-          "https://classroom.google.com/c/NDI1OTY0OTczNDMz/a/NzM4NjgyMDI2NjA4/submissions/by-status/and-sort-name/all/all",
-          "https://forms.gle/Jt3FGM5b4tvyhcyt9"
-        ]
-      ]
-    }
+  "unit1": {
+    "period2": [
+      {"urls": ["https://example1.com", "https://example2.com"], "text": "1"},
+      {"urls": ["https://example3.com"], "text": "2"}
+    ],
+    "period4": [
+      {"urls": ["https://example4.com"], "text": "6"},
+      {"urls": ["https://example5.com", "https://example6.com"], "text": "7"}
+    ],
+    "period9": [
+      {"urls": ["https://example7.com"], "text": "11"}
+    ]
   }
+}
