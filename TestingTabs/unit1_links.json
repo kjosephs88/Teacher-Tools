@@ -1,15 +1,136 @@
 {
   "unit1": {
     "period2": [
-      {"urls": ["https://www.google.com", "https://example2.com"], "text": "1"},
-      {"urls": ["https://example3.com"], "text": "2"}
+      {
+        "text": 1,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/NjgwODY3OTYyNTI2/details"
+        ]
+      },
+      {
+        "text": 2,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/NjgwODY3OTY1MDAw/details"
+        ]
+      },
+      {
+        "text": 3,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/Njk3MDE2MDA1NTAy/details"
+        ]
+      },
+      {
+        "text": 4,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/Njk3MDEyNDYyNzQ5/details"
+        ]
+      },
+      {
+        "text": 5,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/NjgwODY4MDY5MzE1/details"
+        ]
+      },
+      {
+        "text": 6,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/NjgwODY4MzQ3NDI1/details"
+        ]
+      },
+      {
+        "text": 7,
+        "urls": [
+          "https://classroom.google.com/c/NjAzMTQyOTI5NDY1/a/NzAxMTI4MTY4OTU3/details"
+        ]
+      }
     ],
     "period4": [
-      {"urls": ["https://example4.com"], "text": "6"},
-      {"urls": ["https://example5.com", "https://example6.com"], "text": "7"}
+      {
+        "text": 1,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTMzOTYxNzc2/details"
+        ]
+      },
+      {
+        "text": 2,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTM1MzQwMTQz/details"
+        ]
+      },
+      {
+        "text": 3,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTM1MzY0OTcx/details"
+        ]
+      },
+      {
+        "text": 4,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTM0NzQyODcw/details"
+        ]
+      },
+      {
+        "text": 5,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NjgxMjMwOTcyNzUx/details"
+        ]
+      },
+      {
+        "text": 6,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTMyMDM4NDkx/details"
+        ]
+      },
+      {
+        "text": 7,
+        "urls": [
+          "https://classroom.google.com/c/NTMzMjE2MTQ4MDYx/a/NzAxMTMwNDEyNjg0/details"
+        ]
+      }
     ],
     "period9": [
-      {"urls": ["https://example7.com"], "text": "11"}
+      {
+        "text": 1,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NzAxMTM1MzUxMDY3/details"
+        ]
+      },
+      {
+        "text": 2,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NzAxMTM1MzI3ODEz/details"
+        ]
+      },
+      {
+        "text": 3,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NzAxMTM1MTMzNjg5/details"
+        ]
+      },
+      {
+        "text": 4,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NjgxMjMxMDc4NDA5/details"
+        ]
+      },
+      {
+        "text": 5,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NzAxMTM1MDg1ODgy/details"
+        ]
+      },
+      {
+        "text": 6,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NzAxMTM1Njk0ODMz/details"
+        ]
+      },
+      {
+        "text": 7,
+        "urls": [
+          "https://classroom.google.com/c/NTA1NTIxODM1MzMw/a/NjgxMjMxMDk0NTgx/details"
+        ]
+      }
     ]
   }
 }
