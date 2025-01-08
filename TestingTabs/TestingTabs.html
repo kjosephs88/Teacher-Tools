@@ -273,7 +273,7 @@
         // Function to fetch and display the links for a unit
         function loadUnitLinks(unitId) {
             // Fetch the JSON data for Unit 1
-            fetch(`unit${unitId + 1}_links.json`)
+            fetch(`unit${unitId + 1}_links.json`, { cache: "no-store" })
                 .then(response => response.json())
                 .then(data => {
                     const unit = data[`unit${unitId + 1}`];
