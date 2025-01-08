@@ -111,19 +111,7 @@
         <div class="tab active" onclick="showUnit(0)">Unit 1</div>
         <div class="tab" onclick="showUnit(1)">Unit 2</div>
         <div class="tab" onclick="showUnit(2)">Unit 3</div>
-        <div class="tab" onclick="showUnit(3)">Unit 4</div>
-        <div class="tab" onclick="showUnit(4)">Unit 5</div>
-        <div class="tab" onclick="showUnit(5)">Unit 6</div>
-        <div class="tab" onclick="showUnit(6)">Unit 7</div>
-        <div class="tab" onclick="showUnit(7)">Unit 8</div>
-        <div class="tab" onclick="showUnit(8)">Unit 9</div>
-        <div class="tab" onclick="showUnit(9)">Unit 10</div>
-        <div class="tab" onclick="showUnit(10)">Unit 11</div>
-        <div class="tab" onclick="showUnit(11)">Unit 12</div>
-        <div class="tab" onclick="showUnit(12)">Unit 13</div>
-        <div class="tab" onclick="showUnit(13)">Unit 14</div>
-        <div class="tab" onclick="showUnit(14)">Unit 15</div>
-        <div class="tab" onclick="showUnit(15)">Unit 16</div>
+
     </div>
 
     <div class="content">
@@ -137,13 +125,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="grid-container" id="period2"></div>
+                        <div class="grid-container" id="period2-0"></div>
                     </td>
                     <td>
-                        <div class="grid-container" id="period4"></div>
+                        <div class="grid-container" id="period4-0"></div>
                     </td>
                     <td>
-                        <div class="grid-container" id="period9"></div>
+                        <div class="grid-container" id="period9-0"></div>
                     </td>
                 </tr>
             </table>
@@ -192,73 +180,7 @@
                 </tr>
             </table>
         </div>
-
-        <div id="unit-3" class="unit">
-            <div class="unit-title">Unit 4 - Nuclear Chemistry</div>
-            <table class="unit-table">
-                <tr>
-                    <th>Period 2</th>
-                    <th>Period 4</th>
-                    <th>Period 9</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="grid-container" id="period2"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period4"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period9"></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="unit-4" class="unit">
-            <div class="unit-title">Unit 5 - The Periodic Table</div>
-            <table class="unit-table">
-                <tr>
-                    <th>Period 2</th>
-                    <th>Period 4</th>
-                    <th>Period 9</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="grid-container" id="period2"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period4"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period9"></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="unit-5" class="unit">
-            <div class="unit-title">Unit 6 - Chemical Bonding</div>
-            <table class="unit-table">
-                <tr>
-                    <th>Period 2</th>
-                    <th>Period 4</th>
-                    <th>Period 9</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="grid-container" id="period2"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period4"></div>
-                    </td>
-                    <td>
-                        <div class="grid-container" id="period9"></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        
+       
     </div>
 
     <script>
@@ -279,7 +201,7 @@
                     const periods = ["period2", "period4", "period9"];
                     
                     periods.forEach(period => {
-                        const container = document.getElementById(period);
+                        const container = document.getElementById(`${period}-${unitId}`);
                         container.innerHTML = "";
                         unit[period].forEach(link => {
                             const a = document.createElement("a");
